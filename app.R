@@ -13,19 +13,6 @@ library(udpipe)
 library(ipa)
 library(ggplot2)
 
-# sudo apt install python3-pip
-# sudo pip3 install phonetisaurus
-
-# sudo apt install libcurl4-openssl-dev
-# sudo apt install libxml2
-# sudo apt install libxml2-dev
-# sudo apt install libssl-dev
-# sudo apt install qpdf
-# sudo apt install libpoppler-cpp-dev
-# sudo apt install libjpeg-dev
-
-# remotes::install_github("ropensci/readODS")
-
 ################################################################################
 
 ui <- tagList(
