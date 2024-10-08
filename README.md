@@ -12,9 +12,8 @@ The script reads the Foarkarswurdlist which is stored in the file `hyph-fkw.txt`
 
 The web app includes the file `app.R` and the folder `www`. The folder `www` includes the model `hyph.fst`. The app can be run locally in R or RStudio, or on a server with Shiny Server installed, see: `https://posit.co/products/open-source/shiny-server/`.
 
+Happy hyphenating!
+
 ## Contact
 
 E-mail: `wheeringa fryske-akademy nl`.
-
-
-Happy hyphenating!
