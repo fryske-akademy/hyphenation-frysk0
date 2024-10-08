@@ -4,7 +4,7 @@ With his software West Frisian words can be hyphenated, i.e. divided into syllab
 
 ## Generating the model
 
-This can be done with the script `script.R` which runs in R. Make sure that R is installed on you computer, see `https://cloud.r-project.org/`. You can run the script from command line by the command: `Rscript script.R`. The script requires Phonetisaurus to be installed, see `https://pypi.org/project/phonetisaurus/`.
+The model can be generated with the script `script.R` which runs in R. Make sure that R is installed on your computer, see `https://cloud.r-project.org/`. You can run the script from command line by the command: `Rscript script.R`. The script requires Phonetisaurus to be installed, see `https://pypi.org/project/phonetisaurus/`.
 
 The script reads the Foarkarswurdlist which is stored in the file `hyph-fkw.txt` and outputs the alignments in `corpus.txt` (is not used further) and the model in `hyph.fst`.
 
