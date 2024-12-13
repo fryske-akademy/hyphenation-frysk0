@@ -13,13 +13,26 @@ library(udpipe)
 library(ipa)
 library(ggplot2)
 
+# sudo apt install python3-pip
+# sudo pip3 install phonetisaurus
+
+# sudo apt install libcurl4-openssl-dev
+# sudo apt install libxml2
+# sudo apt install libxml2-dev
+# sudo apt install libssl-dev
+# sudo apt install qpdf
+# sudo apt install libpoppler-cpp-dev
+# sudo apt install libjpeg-dev
+
+# remotes::install_github("ropensci/readODS")
+
 ################################################################################
 
 ui <- tagList(
   useShinyjs(),
 
   includeCSS("www/styles.css"), extendShinyjs(script = "extend.js", functions = "clearUpload"),
-  titlePanel(title = HTML("<div class='title'>G2P Frysk<div>"), windowTitle = "G2P Frysk"),
+  titlePanel(title = HTML("<div class='title'>Hyphenation Frysk<div>"), windowTitle = "Hyphenation Frysk"),
 
   tags$head(
     tags$link(rel="icon", href="FA2.png"),
@@ -95,7 +108,11 @@ ui <- tagList(
         br(),
 
         h5(strong("About")),
-        p("Hyphenation Frysk is a web app for converting Frisian text to phonetic IPA transcriptions. The following people were involved in the development of Hyphenation Frysk: Wilbert Heeringa (Fryske Akademy, implementation G2P Frysk), Eduard Drenth (data). Comments are welcome and can be sent to", img(src = 'email.png', height = 19, align = "center"),"."),
+        p("Hyphenation Frysk is a web app for converting Frisian text to phonetic IPA transcriptions. The following people were involved in the development of Hyphenation Frysk: Wilbert Heeringa (Fryske Akademy, implementation Hyphenation Frysk), Eduard Drenth (data). Comments are welcome and can be sent to", img(src = 'email.png', height = 19, align = "center"),"."),
+        br(),
+
+        h5(strong("GitHub")),
+        p("The source code of this app is available in the", a("Fryske Akademy Github repository", href = "https://github.com/fryske-akademy/hyphenation", target = "_blank"), "."),
         br(),
 
         h5(strong("System requirements")),
@@ -169,12 +186,13 @@ ui <- tagList(
     tags$table(style = "width:100%",
                tags$tr
                (
-                 tags$td(tags$a(tags$img(src="FA1.png", style = "height: 35px; margin-top: 9px; margin-left : 22px;"),
+                 tags$td(tags$a(tags$img(src="FA1.png", style = "height: 35px; margin-top: 9px; margin-left : 15px;"),
                                 href    = "https://www.fryske-akademy.nl/en/"),
                                 style   = "width: 40%; text-align: left;",
                                 class   = "balk",
                                 onclick = "window.open('https://www.fryske-akademy.nl/en/', '_blank'); return false;",
-                                target  = "_blank")
+                                target  = "_blank"),
+                 tags$td(textOutput("heartbeat"))
                )
     )
   )
@@ -198,6 +216,12 @@ server <- function(input, output, session)
     updateNavbarPage(session, "navBar", selected=Hash)
   })
 
+  output$heartbeat <- renderText(
+  {
+    invalidateLater(5000)
+    Sys.time()
+  })
+  
   ##############################################################################
 
   global <- reactiveValues(firstFY=TRUE, firstNL=TRUE, firstEN=TRUE, UDfy=NULL, UDnl=NULL, UDen=NULL, model=NULL)
@@ -386,7 +410,7 @@ server <- function(input, output, session)
     if (input$selFormat=="Microsoft Excel")
       ext <- "xlsx"
 
-    return(paste0("G2P.", ext))
+    return(paste0("Hyphenation.", ext))
   }
 
   output$downloadTable <- downloadHandler(filename = fileName, content = function(file)
