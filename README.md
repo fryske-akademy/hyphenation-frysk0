@@ -10,7 +10,7 @@ The script reads the Foarkarswurdlist which is stored in the file `hyph-fkw.txt`
 
 ## Running the web app
 
-The web app includes the file `app.R` and the folder `www`. The folder `www` includes the model `hyph.fst`. The app can be run locally in R or RStudio, or on a server with Shiny Server installed, see: `https://posit.co/products/open-source/shiny-server/`.
+The web app includes the file `app.R` and the folder `www`. The folder `www` includes the model `hyph.fst`. The app can be run locally in R or RStudio, or on a server with Shiny Server installed, see [Get your Shiny apps online](https://posit.co/products/open-source/shiny-server/). An online version of the app can be found [here](https://www.fa.knaw.nl/fa-apps/Hyph/).
 
 ##### Linux (Debian / Ubuntu) installs
 
