@@ -14,14 +14,15 @@ The web app includes the file `app.R` and the folder `www`. The folder `www` inc
 
 ##### Linux (Debian / Ubuntu) installs
 
+Before running the script for the first time, enter the following commands in a terminal:<br>
+
+`sudo apt install r-base-core`<br>
 `sudo apt install libcurl4-openssl-dev`<br>
 `sudo apt install libxml2`<br>
 `sudo apt install libxml2-dev`<br>
 `sudo apt install libssl-dev`<br>
 `sudo apt install libpoppler-cpp-dev`<br>
 `sudo apt install libjpeg-dev`<br>
-
-Happy hyphenating!
 
 ## Contact
 
