@@ -26,4 +26,4 @@ Before running the script for the first time, enter the following commands in a 
 
 ## Contact
 
-E-mail: `wheeringa fryske-akademy nl`.
+E-mail: `wheeringa [at] fryske-akademy [dot] nl`
